@@ -1,0 +1,9 @@
+<section *ngIf="pangolin$ | async as pangolins">
+  <div class="card" *ngFor="let pangolin of pangolins; let i = index">
+    <span *ngIf="pangolinFriends.includes(pangolin.name) === false"
+      ><h2>{{ pangolin.name }}</h2>
+      <p>{{ pangolin.role }}</p>
+      <button (click)="onClick(pangolin.name)">Add Friend</button></span
+    >
+  </div>
+</section>

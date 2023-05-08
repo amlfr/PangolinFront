@@ -1,0 +1,6 @@
+<main>
+  <h1>Social {{ isConnected }} {{ pangolinId }}</h1>
+  <button (click)="toggleRole()">Change your class</button>
+  <app-selector-role *ngIf="showRole"></app-selector-role>
+  <section><app-users></app-users><app-friends></app-friends></section>
+</main>
