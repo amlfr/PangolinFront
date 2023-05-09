@@ -1,9 +1,48 @@
 main {
   width: 100%;
   min-height: 100vh;
-  background-color: aqua;
+  background: linear-gradient(to right, #cfdef3, #e0eafc);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-section {
+h1 {
+  font-size: 3rem;
+  margin: 0.5rem;
+}
+
+.section-social {
   display: flex;
+  gap: 50px;
+  margin: 3rem 0;
+}
+
+.btn {
+  padding: 0 1rem;
+  height: 40px;
+  background-color: #585858;
+  color: #e0eafc;
+  font-size: 1.5rem;
+  margin: 0 2rem 0 0;
+
+  &:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    color: yellow;
+  }
+}
+
+.disconnect-btn {
+  margin: 0 0 0 2rem;
+  &:hover {
+    color: red;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

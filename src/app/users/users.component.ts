@@ -15,18 +15,22 @@ export class UsersComponent {
   pangolinArray: Pangolin[] = [];
   pangolinId = '';
   pangolinFriends: string[] = [];
+  pangolinName!: string;
   constructor(
     private pangolinService: pangolinService,
     private loginService: LoginService
   ) {}
 
   ngOnInit() {
+    this.pangolinId = this.loginService.pangolinId;
     this.pangolin$ = this.pangolinService.pangolin$;
     this.pangolinService.getPangolins();
     this.pangolin$.subscribe((data: Pangolin[]) => {
       this.pangolinArray = data;
     });
     this.pangolinFriends = this.loginService.pangolinFriends;
+    this.pangolinName = this.loginService.pangolinName;
+    console.log('id', this.pangolinName);
   }
 
   onClick(friendName: string) {

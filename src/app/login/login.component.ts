@@ -40,7 +40,8 @@ export class LoginComponent {
           true,
           res.pangolinId,
           res.friends,
-          res.role
+          res.role,
+          res.name
         );
       }
     });

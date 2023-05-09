@@ -1,15 +1,30 @@
 main {
   width: 100vw;
   height: 100vh;
-  background-color: aqua;
+
+  background: linear-gradient(to right, #cfdef3, #e0eafc);
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 40px;
 }
 
 img {
-  width: 100px;
-  height: 100px;
-  object-fit: scale-down;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  object-position: 90% 50%;
+  border-radius: 50%;
+  border: 1px solid black;
+  position: relative;
+  left: 150px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
 }

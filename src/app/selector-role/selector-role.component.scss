@@ -1,3 +1,19 @@
+button {
+  width: 170px;
+  height: 40px;
+  background-color: #585858;
+  color: #e0eafc;
+  font-size: 1.2rem;
+
+  &:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    color: yellow;
+  }
+}
+
 .active {
-  background-color: aquamarine;
+  color: yellow;
+  background-color: rgb(233, 166, 166);
+  border-color: black;
 }

@@ -49,7 +49,13 @@ export class SignupComponent {
     this.pangolinService.createPangolin(pangolin).subscribe((res) => {
       console.log(res.pangolinId);
       if (res.pangolinId != undefined) {
-        this.loginService.emitConnection(true, res.pangolinId, [], res.role);
+        this.loginService.emitConnection(
+          true,
+          res.pangolinId,
+          [],
+          res.role,
+          res.name
+        );
       }
     });
   }

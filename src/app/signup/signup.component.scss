@@ -1,0 +1,48 @@
+form {
+  background-color: rgb(247, 247, 247);
+  padding: 1rem 1.2rem;
+  border: 2px solid black;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+.credential,
+legend {
+  font-size: 1.4rem;
+}
+
+input[type="text"] {
+  height: 25px;
+  width: 150px;
+  background-color: #cfdef3;
+  color: black;
+  margin: 0.2rem;
+  &:focus {
+    outline: 2px solid black;
+  }
+}
+
+input[type="radio"] {
+  margin: 0 0.5rem;
+  accent-color: black;
+}
+
+button {
+  padding: 0 0.6rem;
+  height: 40px;
+  background-color: #585858;
+  color: #e0eafc;
+  font-size: 1.1rem;
+
+  &:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    color: yellow;
+  }
+}
+
+.wrapper {
+  margin: 0.4rem 0;
+}

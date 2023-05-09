@@ -13,18 +13,21 @@ export class LoginService {
   isConnectedSubject = new Subject<boolean>();
   isConnected$ = this.isConnectedSubject.asObservable();
   pangolinRole = '';
+  pangolinName = '';
 
   emitConnection(
     value: boolean,
     idValue: string,
     friends: string[],
-    role: string
+    role: string,
+    name: string
   ) {
     this.isConnectedSubject.next(value);
     this.isConnected = value;
     this.pangolinId = idValue;
     this.pangolinFriends = friends;
     this.pangolinRole = role;
+    this.pangolinName = name;
     console.log('role', this.pangolinRole);
   }
 

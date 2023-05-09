@@ -5,13 +5,28 @@
   >
     Guerrier
   </button>
-  <button (click)="onClick('Alchimiste')">Alchimiste</button>
+  <button
+    (click)="onClick('Alchimiste')"
+    [ngClass]="{ active: currentRole === 'Alchimiste' }"
+  >
+    Alchimiste
+  </button>
   <button
     (click)="onClick('Sorcier')"
     [ngClass]="{ active: currentRole === 'Sorcier' }"
   >
     Sorcier
   </button>
-  <button (click)="onClick('Espion')">Espion</button>
-  <button (click)="onClick('Enchanteur')">Enchanteur</button>
+  <button
+    (click)="onClick('Espion')"
+    [ngClass]="{ active: currentRole === 'Espion' }"
+  >
+    Espion
+  </button>
+  <button
+    (click)="onClick('Enchanteur')"
+    [ngClass]="{ active: currentRole === 'Enchanteur' }"
+  >
+    Enchanteur
+  </button>
 </div>
