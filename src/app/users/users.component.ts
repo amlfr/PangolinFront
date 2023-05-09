@@ -13,14 +13,16 @@ import { CommonModule } from '@angular/common';
 export class UsersComponent {
   pangolin$!: Observable<Pangolin[]>;
   pangolinArray: Pangolin[] = [];
-  pangolinId = '';
+  pangolinId: string = '';
   pangolinFriends: string[] = [];
   pangolinName!: string;
+
   constructor(
     private pangolinService: pangolinService,
     private loginService: LoginService
   ) {}
 
+  //Recuperating variables and observables  before sending http request for all pangolins
   ngOnInit() {
     this.pangolinId = this.loginService.pangolinId;
     this.pangolin$ = this.pangolinService.pangolin$;
@@ -30,9 +32,9 @@ export class UsersComponent {
     });
     this.pangolinFriends = this.loginService.pangolinFriends;
     this.pangolinName = this.loginService.pangolinName;
-    console.log('id', this.pangolinName);
   }
 
+  //Sends a http request with 2 pangolins names to add a friend
   onClick(friendName: string) {
     this.pangolinId = this.loginService.pangolinId;
     this.pangolinService

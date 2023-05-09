@@ -1,5 +1,5 @@
 <section *ngIf="pangolin$ | async as pangolins">
-  <h2>All the pangolins</h2>
+  <h2>Tout les pangolins</h2>
   <div class="container">
     <div class="card" *ngFor="let pangolin of pangolins; let i = index">
       <span
@@ -11,7 +11,7 @@
           <h2>{{ pangolin.name }}</h2>
           <p>{{ pangolin.role }}</p>
         </div>
-        <button (click)="onClick(pangolin.name)">Add Friend</button></span
+        <button (click)="onClick(pangolin.name)">Ajouter ami</button></span
       >
     </div>
   </div>

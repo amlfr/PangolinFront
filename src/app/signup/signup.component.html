@@ -1,18 +1,18 @@
 <form [formGroup]="pangolinForm" (ngSubmit)="onSubmit()">
   <div class="form-group">
-    <label for="name" class="credential">Name</label>
+    <label for="name" class="credential">Nom</label>
     <input type="text" id="name" formControlName="name" />
   </div>
   <div class="form-group">
-    <label for="password" class="credential">Password</label>
+    <label for="password" class="credential">Mot de passe</label>
     <input type="text" id="password" formControlName="password" />
   </div>
-  <legend>Classe:</legend>
+  <legend>Role:</legend>
   <div class="wrapper" *ngFor="let role of roles">
     <input type="radio" formControlName="role" [value]="role" /><label
       for="class"
       >{{ role }}</label
     >
   </div>
-  <button type="submit" [disabled]="!pangolinForm.valid">Signup</button>
+  <button type="submit" [disabled]="!pangolinForm.valid">Inscription</button>
 </form>

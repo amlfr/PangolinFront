@@ -9,24 +9,27 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./social.component.scss'],
 })
 export class SocialComponent {
-  isConnected!: boolean;
   pangolinId!: string;
   showRole = false;
-  currentRole!: string;
   pangolinName!: string;
 
   constructor(private loginService: LoginService, private router: Router) {}
 
+  /* Sets up the id and name of the user as variables and checks if the user is connected through the login service, redirects to the home page if he isn't */
   ngOnInit() {
     this.pangolinId = this.loginService.pangolinId;
+    this.pangolinName = this.loginService.pangolinName;
     if (this.loginService.isConnected === false) {
       this.router.navigate(['']);
     }
-    this.pangolinName = this.loginService.pangolinName;
   }
+
+  /* Toggles the role selector component */
   toggleRole() {
     this.showRole = !this.showRole;
   }
+
+  /* Sets the connected variable in the login service to false then redirects to the home page */
   disconnect() {
     this.loginService.isConnected = false;
     this.router.navigate(['']);

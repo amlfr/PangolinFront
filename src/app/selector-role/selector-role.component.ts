@@ -20,14 +20,14 @@ export class SelectorClassComponent {
     private pangolinService: pangolinService
   ) {}
 
+  /* Gets back the role of the pangolin from the login service */
   ngOnInit() {
     this.currentRole = this.loginService.pangolinRole;
-    console.log('currentRole', this.currentRole);
   }
 
+  /* Sends a http request when clicked with the role and id attached to construct request */
   onClick(role: string) {
     this.pangolinId = this.loginService.pangolinId;
-    console.log('pangolinId', this.pangolinId);
     this.pangolinService.changeRole(this.pangolinId, role).subscribe();
     this.currentRole = role;
     this.loginService.pangolinRole = role;

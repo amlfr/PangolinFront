@@ -11,16 +11,13 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title: string = 'pangolin-friends';
-  isConnected: boolean = false;
-  pangolinId: string = '';
 
   constructor(private loginService: LoginService, private router: Router) {}
 
+  /* Listen to the observable the tracks connection and redirects to social page when user is connected */
   ngOnInit() {
     this.loginService.isConnected$.subscribe((value: boolean) => {
-      this.isConnected = value;
       this.router.navigate(['/social']);
-      this.pangolinId = this.loginService.pangolinId;
     });
   }
 }

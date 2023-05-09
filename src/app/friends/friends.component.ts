@@ -21,6 +21,7 @@ export class FriendsComponent {
     private loginService: LoginService
   ) {}
 
+  /* Makes a request for all pangolins  */
   ngOnInit() {
     this.pangolin$ = this.pangolinService.pangolin$;
     this.pangolinService.getPangolins();
@@ -30,6 +31,7 @@ export class FriendsComponent {
     this.pangolinFriends = this.loginService.pangolinFriends;
   }
 
+  /* Makes a request with 2 names to unfriend */
   onClick(friendName: string) {
     this.pangolinId = this.loginService.pangolinId;
 

@@ -25,6 +25,7 @@ export class LoginComponent {
     private loginService: LoginService
   ) {}
 
+  //Initializing the login form
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
       name: [null, Validators.required],
@@ -32,6 +33,7 @@ export class LoginComponent {
     });
   }
 
+  //Send a http request when the button is clicked, then sends the connection informations to the login service
   onSubmit() {
     const pangolin: Pangolin = this.loginForm!.value;
     this.pangolinService.connectPangolin(pangolin).subscribe((res) => {

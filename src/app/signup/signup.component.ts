@@ -24,8 +24,8 @@ export class SignupComponent {
     'Enchanteur',
   ]; /* 
   currentRole: string = ''; */
-  pangolinId: string = '';
-  isConnected: boolean = false;
+  /* pangolinId: string = '';
+  isConnected: boolean = false; */
 
   @Output() connectionEvent = new EventEmitter<boolean>();
 
@@ -35,6 +35,7 @@ export class SignupComponent {
     private loginService: LoginService
   ) {}
 
+  /* Initalizes the signup up form control */
   ngOnInit() {
     this.pangolinForm = this.formBuilder.group({
       name: [null, Validators.required],
@@ -43,11 +44,10 @@ export class SignupComponent {
     });
   }
 
+  //Send a http request when the button is clicked, then sends the connection informations to the login service
   onSubmit() {
-    console.log(this.pangolinForm.value);
     const pangolin: Pangolin = this.pangolinForm!.value;
     this.pangolinService.createPangolin(pangolin).subscribe((res) => {
-      console.log(res.pangolinId);
       if (res.pangolinId != undefined) {
         this.loginService.emitConnection(
           true,

@@ -15,6 +15,7 @@ export class LoginService {
   pangolinRole = '';
   pangolinName = '';
 
+  /* Sets up a number of variables in this service when called to share around */
   emitConnection(
     value: boolean,
     idValue: string,
@@ -28,9 +29,9 @@ export class LoginService {
     this.pangolinFriends = friends;
     this.pangolinRole = role;
     this.pangolinName = name;
-    console.log('role', this.pangolinRole);
   }
 
+  /* Modifies an array of string when called and either deletes the target string if found or adds it otherwise */
   socialChange(friendName: string) {
     if (this.pangolinFriends.includes(friendName)) {
       const index = this.pangolinFriends.indexOf(friendName);
