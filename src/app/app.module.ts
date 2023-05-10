@@ -7,15 +7,17 @@ import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
+import { SignupModule } from './signup/signup.module';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, SignupComponent, LoginComponent],
+  declarations: [AppComponent, HomeComponent, LoginComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    SignupModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

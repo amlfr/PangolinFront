@@ -1,6 +1,4 @@
-import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
-import { SignupComponent } from './signup/signup.component';
-import { ActivatedRoute } from '@angular/router';
+import { Component } from '@angular/core';
 import { LoginService } from './services/login.service';
 import { Router } from '@angular/router';
 

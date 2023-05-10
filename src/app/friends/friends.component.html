@@ -1,5 +1,5 @@
 <section *ngIf="pangolin$ | async as pangolins">
-  <h2>Your friends</h2>
+  <h2>Vos amis</h2>
   <div class="container">
     <div class="card" *ngFor="let pangolin of pangolins; let i = index">
       <span *ngIf="pangolinFriends.includes(pangolin.name)">
@@ -7,7 +7,7 @@
           <h2>{{ pangolin.name }}</h2>
           <p>{{ pangolin.role }}</p>
         </div>
-        <button (click)="onClick(pangolin.name)">Remove Friend</button></span
+        <button (click)="onClick(pangolin.name)">Supprimer ami</button></span
       >
     </div>
   </div>

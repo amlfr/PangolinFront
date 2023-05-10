@@ -4,6 +4,8 @@ import { SocialComponent } from './social.component';
 import { FriendsComponent } from '../friends/friends.component';
 import { UsersComponent } from '../users/users.component';
 import { SelectorClassComponent } from '../selector-role/selector-role.component';
+import { SignupModule } from '../signup/signup.module';
+import { SignupComponent } from '../signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -12,6 +14,6 @@ import { SelectorClassComponent } from '../selector-role/selector-role.component
     UsersComponent,
     SelectorClassComponent,
   ],
-  imports: [CommonModule],
+  imports: [CommonModule, SignupModule],
 })
 export class SocialModule {}

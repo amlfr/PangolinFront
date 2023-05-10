@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-
-import { Observable, throwError, Subject, tap } from 'rxjs';
+import { Subject, Observable } from 'rxjs';
+import { Pangolin } from 'src/app/models/pangolin';
 
 @Injectable({
   providedIn: 'root',
@@ -14,6 +14,8 @@ export class LoginService {
   isConnected$ = this.isConnectedSubject.asObservable();
   pangolinRole = '';
   pangolinName = '';
+  pangolin$!: Observable<Pangolin[]>;
+  pangolinArray: Pangolin[] = [];
 
   /* Sets up a number of variables in this service when called to share around */
   emitConnection(

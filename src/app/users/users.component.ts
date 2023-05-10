@@ -1,10 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Pangolin } from '../models/pangolin';
 import { pangolinService } from '../services/pangolin.service';
 import { LoginService } from '../services/login.service';
-import { HttpClient } from '@angular/common/http';
-import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
@@ -27,9 +25,7 @@ export class UsersComponent {
     this.pangolinId = this.loginService.pangolinId;
     this.pangolin$ = this.pangolinService.pangolin$;
     this.pangolinService.getPangolins();
-    this.pangolin$.subscribe((data: Pangolin[]) => {
-      this.pangolinArray = data;
-    });
+
     this.pangolinFriends = this.loginService.pangolinFriends;
     this.pangolinName = this.loginService.pangolinName;
   }

@@ -1,10 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {
-  FormGroup,
-  FormControl,
-  Validators,
-  FormBuilder,
-} from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { pangolinService } from 'src/app/services/pangolin.service';
 import { Pangolin } from 'src/app/models/pangolin';
 import { LoginService } from '../services/login.service';

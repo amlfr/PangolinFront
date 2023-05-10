@@ -1,10 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Pangolin } from '../models/pangolin';
+import { Component } from '@angular/core';
 import { pangolinService } from '../services/pangolin.service';
 import { LoginService } from '../services/login.service';
-import { HttpClient } from '@angular/common/http';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-selector-role',

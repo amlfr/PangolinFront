@@ -1,10 +1,10 @@
 <main>
-  <h1>Welcome {{ pangolinName }}</h1>
+  <h1>Bienvenue {{ pangolinName }}</h1>
   <section class="section-self">
     <div class="container">
-      <button (click)="toggleRole()" class="btn">Change your role</button
+      <button (click)="toggleRole()" class="btn">Changez votre role</button
       ><button (click)="disconnect()" class="disconnect-btn btn">
-        Disconnect
+        Déconnexion
       </button>
     </div>
 
@@ -13,4 +13,7 @@
   <section class="section-social">
     <app-users></app-users><app-friends></app-friends>
   </section>
+  <app-signup [doBoth]="true"></app-signup>
 </main>
+<!-- (newFriend)="onNewFriend($event)" -->
+<!-- [newFriend]="newFriend" -->

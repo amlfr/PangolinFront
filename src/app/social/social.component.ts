@@ -13,6 +13,8 @@ export class SocialComponent {
   showRole = false;
   pangolinName!: string;
 
+  /*  @Input() newFriend!: boolean; */
+
   constructor(private loginService: LoginService, private router: Router) {}
 
   /* Sets up the id and name of the user as variables and checks if the user is connected through the login service, redirects to the home page if he isn't */
@@ -34,4 +36,9 @@ export class SocialComponent {
     this.loginService.isConnected = false;
     this.router.navigate(['']);
   }
+
+  /* onNewFriend(newFriend: boolean) {
+    this.newFriend = newFriend;
+    console.log('onNewFriend', newFriend);
+  } */
 }

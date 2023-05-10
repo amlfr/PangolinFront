@@ -1,13 +1,9 @@
-import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
-import {
-  FormGroup,
-  FormControl,
-  Validators,
-  FormBuilder,
-} from '@angular/forms';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { pangolinService } from 'src/app/services/pangolin.service';
 import { Pangolin } from 'src/app/models/pangolin';
 import { LoginService } from '../services/login.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-signup',
@@ -22,12 +18,12 @@ export class SignupComponent {
     'Sorcier',
     'Espion',
     'Enchanteur',
-  ]; /* 
-  currentRole: string = ''; */
-  /* pangolinId: string = '';
-  isConnected: boolean = false; */
+  ];
+  pangolin$!: Observable<Pangolin[]>;
+  pangolinArray: Pangolin[] = [];
 
-  @Output() connectionEvent = new EventEmitter<boolean>();
+  /*  @Output() newFriend = new EventEmitter<boolean>(); */
+  @Input() doBoth!: boolean;
 
   constructor(
     private pangolinService: pangolinService,
@@ -48,7 +44,7 @@ export class SignupComponent {
   onSubmit() {
     const pangolin: Pangolin = this.pangolinForm!.value;
     this.pangolinService.createPangolin(pangolin).subscribe((res) => {
-      if (res.pangolinId != undefined) {
+      if (res.pangolinId != undefined && this.doBoth === false) {
         this.loginService.emitConnection(
           true,
           res.pangolinId,
@@ -58,5 +54,18 @@ export class SignupComponent {
         );
       }
     });
+    if (this.doBoth === true) {
+      this.pangolinService
+        .friendPangolin(
+          this.loginService.pangolinId,
+          this.pangolinForm.value.name
+        )
+        .subscribe(() => {
+          setTimeout(() => {
+            this.pangolinService.getPangolins();
+          }, 1000);
+        });
+      this.loginService.socialChange(this.pangolinForm.value.name);
+    }
   }
 }
