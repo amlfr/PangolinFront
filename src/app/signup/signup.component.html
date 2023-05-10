@@ -1,4 +1,7 @@
 <form [formGroup]="pangolinForm" (ngSubmit)="onSubmit()">
+  <ng-container *ngIf="doBoth">
+    <h1>Inscription et ajout d'un ami</h1>
+  </ng-container>
   <div class="form-group">
     <label for="name" class="credential">Nom</label>
     <input type="text" id="name" formControlName="name" />
